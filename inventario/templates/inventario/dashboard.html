@@ -1,0 +1,23 @@
+
+{% extends 'inventario/base.html' %}
+{% load static %}
+
+{% block title %}Menú Principal{% endblock %}
+{% block page_title %}Bienvenido a Meneses Constructores{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="height:50vh;">
+  <div class="col-md-6 text-center">
+    <img src="{% static 'logo_mc.png' %}" width="150" alt="Logo" class="animate__animated animate__fadeIn" />
+    <p class="lead mt-3">Selecciona una opción del menú lateral</p>
+  </div>
+</div>
+
+<!-- Dino animado solo en dashboard -->
+<img src="{% static 'img/dino_mc_animado.png' %}" 
+     title="Haz clic para ver el libro de obra" 
+     class="dino-floating" 
+     alt="Dino Constructor">
+{% endblock %}
+
+

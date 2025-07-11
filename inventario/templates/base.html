@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Meneses Constructores{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <style>
+    .brand-link, .nav-sidebar > .nav-item > .nav-link.active {
+      background-color: #35414C; color: white !important;
+    }
+    .brand-link:hover { background-color: #2b343f; }
+    .btn-primary { background-color: #50c7fa; border-color: #50c7fa; }
+    .btn-primary:hover { background-color: #38b7e0; border-color: #38b7e0; }
+  </style>
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button">☰</a>
+      </li>
+    </ul>
+    <span class="navbar-text ms-auto">Meneses Constructores "Construimos como filosofía de vida"</span>
+  </nav>
+
+  <!-- Sidebar -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <a href="{% url 'dashboard' %}" class="brand-link text-center d-flex flex-column align-items-center py-4">
+    <img src="{% static 'logo_mc.png' %}" alt="Logo" class="img-circle" style="opacity: .9; width: 80px; height: 80px; object-fit: cover;">
+    <span class="text-white fw-bold mt-2" style="font-size: 1.1rem;">Bienvenido MC</span>
+  </a>
+  <div class="sidebar">
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column">
+        <li class="nav-item"><a href="{% url 'home_dashboard' %}" class="nav-link"><i class="nav-icon fas fa-home"></i><p>Home</p></a></li>
+        <li class="nav-item"><a href="{% url 'ingresar_articulo' %}" class="nav-link"><i class="nav-icon fas fa-box-open"></i><p>Ingresar Artículo</p></a></li>
+        <li class="nav-item"><a href="{% url 'consultar_inventario' %}" class="nav-link"><i class="nav-icon fas fa-boxes"></i><p>Consultar Inventario</p></a></li>
+        <li class="nav-item"><a href="{% url 'mover_inventario' %}" class="nav-link"><i class="nav-icon fas fa-exchange-alt"></i><p>Mover Inventario</p></a></li>
+        <li class="nav-item"><a href="{% url 'historial_movimientos' %}" class="nav-link"><i class="nav-icon fas fa-history"></i><p>Historial</p></a></li>
+        <li class="nav-item"><a href="{% url 'registrar_ubicacion' %}" class="nav-link"><i class="nav-icon fas fa-map-marker-alt"></i><p>Ubicaciones</p></a></li>
+      </ul>
+    </nav>
+  </div>
+</aside>
+
+  <!-- Contenido -->
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid"><div class="row mb-2"><div class="col-sm-6"><h1 class="m-0">{% block page_title %}{% endblock %}</h1></div></div></div>
+    </div>
+    <section class="content"><div class="container-fluid">{% block content %}{% endblock %}</div></section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer text-center"><strong>© 2025 Meneses Constructores.</strong></footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
