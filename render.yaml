@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: django-inventario-nins
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn departamento_project.wsgi:application"
+    staticPublishPath: staticfiles
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: departamento_project.settings
